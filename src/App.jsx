@@ -1,4 +1,3 @@
-import PWABadge from "./PWABadge.jsx";
 import shuffle from "./utilities/shuffle.js";
 import "./App.css";
 import { useState, useEffect } from "react";
@@ -85,7 +84,6 @@ function App() {
           );
         })}
       </div>
-      <PWABadge />
     </>
   );
 }
