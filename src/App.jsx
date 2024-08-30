@@ -6,6 +6,7 @@ import Header from "./components/Header.jsx";
 import useSound from "use-sound";
 import cardSound from "./card.mp3";
 import matchCardSound from "./cardMatch.mp3";
+import useAppBadge from "./hooks/useAppBadge";
 
 function App() {
   const [wins, setWins] = useState(0);
@@ -13,6 +14,7 @@ function App() {
   const [pickOne, setPickOne] = useState(null);
   const [pickTwo, setPickTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [setBadge, clearBadge] = useAppBadge(); // Handles app badge
   const [volume, setVolume] = useState(0.75);
   const [play] = useSound(cardSound, {
     // playbackRate,
@@ -101,7 +103,15 @@ function App() {
     return () => {
       clearTimeout(pickTimer);
     };
-  }, [cards, pickOne, pickTwo, playMatch]);
+  }, [
+    cards,
+    currentGradient,
+    gradients,
+    pickOne,
+    pickTwo,
+    playMatch,
+    shuffleGradient,
+  ]);
 
   useEffect(() => {
     const checkWin = cards.filter((card) => !card.matched);
@@ -110,12 +120,13 @@ function App() {
       console.log("You win!");
       setWins(wins + 1);
       localStorage.setItem("wins", Number(wins) + 1);
+      setBadge();
       handleTurn();
       shuffleGradient();
       document.body.style.background = gradients[currentGradient];
       setCards(shuffle);
     }
-  }, [cards, wins]);
+  }, [cards, wins, setBadge, shuffleGradient, gradients, currentGradient]);
 
   return (
     <>
