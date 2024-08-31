@@ -7,6 +7,7 @@ import useSound from "use-sound";
 import cardSound from "./card.mp3";
 import matchCardSound from "./cardMatch.mp3";
 import useAppBadge from "./hooks/useAppBadge";
+import * as confetti from "confettis";
 
 function App() {
   const [wins, setWins] = useState(0);
@@ -84,6 +85,7 @@ function App() {
             if (card.image === pickOne.image) {
               shuffleGradient();
               document.body.style.background = gradients[currentGradient];
+              confetti.create();
               playMatch();
               return { ...card, matched: true };
             } else {

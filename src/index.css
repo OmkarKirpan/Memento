@@ -4,9 +4,9 @@ warning in VSCode,change the css.lint.unknownAtRules setting to ignore. */
 
 :root {
   --text: #f66936;
-  --card: #202426;
+  --card: #27374d;
   --orange: #ffa200;
-  --bg: linear-gradient(135deg, #fc2473, #f66936);
+  --bg: linear-gradient(to left, #fc5c7d, #6a82fb);
 
   --delay: 200ms;
   --rotate-0: rotateY(0deg);
