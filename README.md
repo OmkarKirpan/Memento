@@ -14,29 +14,29 @@ This project is a memory matching game built with React.js and Vite.js, incorpor
 ## Installation
 
 1. **Clone the repository:**
-   \`\`\`bash
-   git clone https://github.com/your-username/memento-game.git
-   \`\`\`
+   ```bash
+   git clone https://github.com/OmkarKirpan/Memento.git
+   ```
 
 2. **Navigate to the project directory:**
-   \`\`\`bash
-   cd memento-game
-   \`\`\`
+   ```bash
+   cd Memento
+   ```
 
 3. **Install the dependencies:**
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 4. **Run the development server:**
-   \`\`\`bash
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
 5. **Build for production:**
-   \`\`\`bash
+   ```bash
    npm run build
-   \`\`\`
+   ```
 
 ## How to Play
 
@@ -49,31 +49,31 @@ This project is a memory matching game built with React.js and Vite.js, incorpor
 
 - **React.js:** A JavaScript library for building user interfaces.
 - **Vite.js:** A fast front-end build tool and development environment.
-- **Hooks:** Custom hooks like \`useAppBadge\` to manage application badges, \`useState\` and \`useEffect\` for state management, and \`useSound\` for handling sound effects.
+- **Hooks:** Custom hooks like `useAppBadge` to manage application badges, `useState` and `useEffect` for state management, and `useSound` for handling sound effects.
 - **Confetti.js:** Used to create celebratory confetti animations.
 - **Local Storage:** Used to persist the number of wins between sessions.
 
 ## Code Overview
 
 ### App Component
-The \`App\` component manages the game logic, including:
+The `App` component manages the game logic, including:
 
 - **State management:**
-  - \`wins\`: Tracks the number of wins.
-  - \`cards\`: Holds the shuffled cards for the game.
-  - \`pickOne\`, \`pickTwo\`: Tracks the two selected cards.
-  - \`disabled\`: Disables card clicks while checking for a match.
-  - \`volume\`: Controls the volume of the sound effects.
-  - \`currentGradient\`: Tracks the background gradient index.
+  - `wins`: Tracks the number of wins.
+  - `cards`: Holds the shuffled cards for the game.
+  - `pickOne`, `pickTwo`: Tracks the two selected cards.
+  - `disabled`: Disables card clicks while checking for a match.
+  - `volume`: Controls the volume of the sound effects.
+  - `currentGradient`: Tracks the background gradient index.
   
 - **Effects:**
-  - On component mount, retrieves the number of wins from \`localStorage\`.
+  - On component mount, retrieves the number of wins from `localStorage`.
   - Checks for card matches and triggers confetti animations, sound effects, and background changes when a match is found.
   - Detects a win when all cards are matched and increments the win count.
   
 ### Utilities
 
-- **\`shuffle.js\`:** A utility function to shuffle the cards for each new game.
+- **`shuffle.js`:** A utility function to shuffle the cards for each new game.
 
 ### Components
 
@@ -87,8 +87,8 @@ The \`App\` component manages the game logic, including:
 ## Sound Effects
 
 The project includes two sound effects:
-- \`card.mp3\`: Plays when a card is flipped.
-- \`cardMatch.mp3\`: Plays when two cards are successfully matched.
+- `card.mp3`: Plays when a card is flipped.
+- `cardMatch.mp3`: Plays when two cards are successfully matched.
 
 ## Confetti
 
